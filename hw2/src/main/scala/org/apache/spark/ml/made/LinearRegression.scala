@@ -67,10 +67,7 @@ class LinearRegression(override val uid: String) extends Estimator[LinearRegress
       bias = bias - lr * error_mean
 
       print("EPOCH", i)
-      println("ERROR", error_mean)
       println("MSE", mse)
-      println("WEIGHT", w)
-      print("grad" , data("grad"))
     }
     copyValues(new LinearRegressionModel(w.asInstanceOf[Vector].toDense, bias)).setParent(this)
   }
